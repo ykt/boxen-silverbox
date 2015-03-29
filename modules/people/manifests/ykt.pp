@@ -1,19 +1,21 @@
 class people::ykt {
-  
-  include people::ykt::dev::java
-  include people::ykt::net::browser
-  include people::ykt::admin::console
 
-  # $home     = "/Users/${::boxen_user}"
-  # $my       = "${home}/my"
-  # $dotfiles = "${my}/dotfiles"
-  
-  # file { $my:
-  #   ensure  => directory
-  # }
+  notify { 'class people::ykt declared': }
 
-  # repository { $dotfiles:
-  #   source  => 'jbarnette/dotfiles',
-  #   require => File[$my]
-  # }
+
+  include people::ykt::misc::init 
+  
+   include people::ykt::admin::console
+#  include people::ykt::admin::security
+   include people::ykt::admin::virtual
+
+#  include people::ykt::dev::java
+  
+  # include people::ykt::net::browser
+#  include people::ykt::net::chats
+#  include people::ykt::misc::editor
+  include people::ykt::misc::productivity
+
+#  include people::ykt::osx::configure
+
 }

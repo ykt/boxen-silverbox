@@ -68,6 +68,28 @@ github "repository",  "2.3.0"
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
 
+github "osx"
+
+github "java", "1.7.1"
+
 github "sublime_text_2", "1.1.2"
+github "intellij", "1.5.1"
+
+github "keepassx", :path => "/Users/yasir/Development/repo/git/github/ykt/puppet-keepassx"
+github "dropbox"
+
+github "iterm2", "1.2.4"
+
 github "chrome"
+github "hipchat"
+github "skype"
+
+github "virtualbox"
+github "vagrant"
+
+github "alfred"
+github "mou"
+
+github "tcsh", "1.0.0", :repo => "ykt/puppet-tcsh"
+
 

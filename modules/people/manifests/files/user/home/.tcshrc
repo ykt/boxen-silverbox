@@ -1,0 +1,74 @@
+# $FreeBSD: src/share/skel/dot.cshrc,v 1.14.10.1 2009/08/03 08:13:06 kensmith Exp $
+#
+# .cshrc - csh resource script, read at beginning of execution by each shell
+#
+# see also csh(1), environ(7).
+#
+alias h		history 100 
+alias j		jobs -l
+alias la	ls -a
+alias lf	ls -FA
+alias ll	ls -lA
+alias ls 	ls -G -x
+alias grep 	grep --color=auto
+alias vi 	vim
+#alias rm 	'mv -i \!* ~/.Trash/'
+alias xterm 	xterm -bg black -fg white
+
+# A righteous umask
+umask 22
+
+set path = (/sbin /bin /usr/sbin /usr/local/sbin /usr/local/bin $HOME/bin /usr/local/bin/ykt $HOME/Lab/androidCamp/android-sdk-linux_86/tools /opt/go/bin /usr/bin)
+#set prompt = "%U%m%u:%B%~%b%# "
+#%{\033[x;ym%}%n%{\033[0m%}
+# x
+#0 - normal
+#1 - bold
+#2 - normal again
+#3 - background color
+#4 - underline the text
+#5 - blinking
+#30 - black
+#31 - red
+#32 - green
+#33 - yellow
+#34 - blue
+#35 - magenta
+#36 - cyan
+#37 - white
+
+set prompt = "%{\033[4;36m%}%n%{\033[0m%}:--># "
+#alias precmd 'echo -n "$cwd>"'
+set autolist
+set color
+set jadepath = ~/Lab/java-lab/azanah/Jade/JADE-all-4.0/jade/lib/jade.jar
+setenv	EDITOR	vim
+#setenv	PAGER	more
+setenv	BLOCKSIZE	K
+setenv JAVA_HOME "/Library/Java/JavaVirtualMachines/current/Contents/Home"
+
+#Go Lang
+set GOPATH=/opt/gxo
+set GOROOT=/opt/go
+
+#Docker enviroments
+set DOCKER_CERT_PATH=/Users/yasir/.boot2docker/certs/boot2docker-vm
+set DOCKER_TLS_VERIFY=1
+set DOCKER_HOST=tcp://192.168.59.103:2376
+
+if ($?prompt) then
+	# An interactive shell -- set some stuff up
+	set filec
+	set history = 250
+	set savehist = 100
+	set mail = (/var/mail/$USER)
+	set rmstar
+	set histfile =	"$HOME/.config/.history"
+	if ( $?tcsh ) then
+		bindkey "^W" backward-delete-word
+		bindkey -k up history-search-backward
+		bindkey -k down history-search-forward
+		source /usr/local/share/tcsh/complete.tcsh
+	endif
+endif
+

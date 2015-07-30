@@ -1,6 +1,7 @@
 class people::ykt::misc::init {
 
   include git
+  include git-flow
 
   file { ['/usr', '/usr/local', '/usr/local/bin']:
     ensure => 'directory'

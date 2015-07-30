@@ -90,6 +90,11 @@ github "vagrant"
 github "alfred"
 github "mou"
 
-github "tcsh", "1.0.0", :repo => "ykt/puppet-tcsh"
+github "tcsh", "0.0.1", :repo => "ykt/puppet-tcsh"
 
+github "puppet-git-flow", "0.2.0", :repo => "b00giZm/puppet-git-flow"
 
+github "vagrant_manager"
+github "packer"
+github "puppet-scala", "1.0.3", :repo => "steinim/puppet-scala"
+github "mysql"

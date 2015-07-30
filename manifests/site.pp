@@ -56,7 +56,7 @@ node default {
   # include dnsmasq
   include git
   #include hub
-  #include nginx
+  include nginx
   # include sublime_text_2
 
   # fail if FDE is not enabled
